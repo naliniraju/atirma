@@ -1,0 +1,38 @@
+<div class="table-responsive shadow-sm p-3 mb-5 bg-white rounded">
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Application_Treatment</th>
+        <th>Applied</th>
+        <th>SSP</th>
+        <th>MCP</th>
+        <th>Farmer_Land_Village_Id</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let applicationtreatment of applicationtreatments">
+
+        <td>{{applicationtreatment.date}}</td>
+        <td>{{applicationtreatment.application_treatment}}</td>
+        <td>{{applicationtreatment.applied}}</td>
+        <td>{{applicationtreatment.ssp}}</td>
+        <td>{{applicationtreatment.mcp}}</td>
+        <td>{{applicationtreatment.farmer_land_village_id}}</td>
+        <td>
+          <div class="btn-group btn-group-sm" role="group" style="background-color: transparent;">
+            <button class="btn btn-primary myspan" [routerLink]="['/applicationtreatments', applicationtreatment.id]">Edit</button>
+            <span></span>
+            <button class="btn btn-danger myspan" (click)="delete(applicationtreatment.id)">Delete</button>
+          </div>
+        </td>
+
+      </tr>
+
+    </tbody>
+    <br><button class="btn btn-sm btn-warning myspan" (click)="goBack()">Back</button>
+  </table>
+
+
+</div>

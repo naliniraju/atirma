@@ -1,0 +1,34 @@
+<div class="table-responsive shadow-sm p-3 mb-5 bg-white rounded">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Related_to_Csi</th>
+          <th>Relationship_Type</th>
+          <th>Person_Id</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let farmerrelation of farmerrelations">
+
+          <td>{{farmerrelation.related_to_csi}}</td>
+          <td>{{farmerrelation.relationship_type}}</td>
+          <td>{{farmerrelation.person_id}}</td>
+         
+          <td>
+            <div class="btn-group btn-group-sm" style="background-color: transparent;">
+              <button class="btn btn-primary myspan" [routerLink]="['/farmerrelations', farmerrelation.id]">Edit</button>
+              <span></span>
+              <button class="btn btn-sm btn-danger myspan" (click)="delete(farmerrelation.id)">Delete</button>
+            </div>
+          </td>
+          
+        </tr>
+      
+      </tbody>
+      <br><button class="btn btn-sm btn-warning myspan" (click)="goBack()">Back</button>
+
+    </table>
+ 
+
+</div>
